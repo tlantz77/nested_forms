@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @band.name %>
+</p>
+
+<% if @band.albums.present? %>
+  <h4>Discography</h4>
+  <% @band.albums.each do |album| %>
+    <p><%= album.title %> <%=album.year %></p>
+    <% end %>
+<% end %>
+
+
+<%= link_to 'Edit', edit_band_path(@band) %> |
+<%= link_to 'Back', bands_path %>

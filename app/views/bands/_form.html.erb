@@ -1,0 +1,28 @@
+<%= form_for(@band) do |f| %>
+  <% if @band.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@band.errors.count, "error") %> prohibited this band from being saved:</h2>
+
+      <ul>
+      <% @band.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= f.fields_for :albums do |ff| %>
+    <%= ff.label :title %><br>
+    <%= ff.text_field :title %><br>
+    <%= ff.label :year %><br>
+    <%= ff.text_field :year %><br><br>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
