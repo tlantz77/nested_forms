@@ -5,6 +5,8 @@
   <%= @band.name %>
 </p>
 
+<%= link_to 'Add Album', new_album_path(@band) %>
+
 <% if @band.albums.present? %>
   <h4>Discography</h4>
   <% @band.albums.each do |album| %>
