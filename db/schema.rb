@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160615000258) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "albums", force: :cascade do |t|
     t.string   "title"
     t.string   "year"
@@ -24,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160615000258) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "albums", ["band_id"], name: "index_albums_on_band_id", using: :btree
+  add_index "albums", ["band_id"], name: "index_albums_on_band_id"
 
   create_table "bands", force: :cascade do |t|
     t.string   "name"
@@ -32,5 +29,4 @@ ActiveRecord::Schema.define(version: 20160615000258) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "albums", "bands"
 end

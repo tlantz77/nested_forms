@@ -14,15 +14,18 @@
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
-  </div>
+  </div><br>
+  
 
+  <h4>Albums</h4>
   <%= f.fields_for :albums do |ff| %>
     <%= ff.label :title %><br>
     <%= ff.text_field :title %><br>
     <%= ff.label :year %><br>
     <%= ff.text_field :year %><br><br>
-
-    <% end %>
+  <% end %>
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>
